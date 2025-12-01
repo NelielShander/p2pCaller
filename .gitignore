@@ -1,0 +1,38 @@
+# Binaries for the current project
+*.exe
+*.dll
+*.so
+*.dylib
+*.wasm
+*.bin
+
+# Build artifacts
+/build/
+/dist/
+/pkg/
+/tmp/
+
+# Editor/IDE specific files
+.vscode/
+.idea/
+*.sublime-workspace
+*.swp
+*.bak
+*~
+
+# Operating System generated files
+.DS_Store
+Thumbs.db
+
+# Dependency management files (if not using Go Modules)
+# vendor/ # Uncomment if you're not using Go Modules and vendoring dependencies
+
+# Test results
+test_results/
+
+# Log files
+*.log
+
+# Environment variables and sensitive data
+.env
+*.envrc
