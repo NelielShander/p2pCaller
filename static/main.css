@@ -1,0 +1,25 @@
+body {
+    background-color: dimgray;
+    min-height: 100vh;
+    margin: 0;
+}
+
+#localVideo {
+    height: 30vh;
+    position: absolute;
+}
+
+#remoteVideo {
+    display: block;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+#callButton {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 2;
+}
