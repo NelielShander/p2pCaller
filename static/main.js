@@ -8,16 +8,21 @@ ws.onopen = async function () {
     ws.onmessage = message => {
         const data = JSON.parse(message.data)
         switch (data.type) {
-            case 'offer': createAnswer(data); break
-            case 'answer': createSession(data); break
-            case 'ice': addCandidate(data); break
+            case 'offer':
+                createAnswer(data);
+                break
+            case 'answer':
+                createSession(data);
+                break
+            case 'ice':
+                addCandidate(data);
+                break
         }
 
         pc.onicecandidate = event => {
             if (event.candidate) {
                 message = {
-                    type: 'ice',
-                    candidate: event.candidate
+                    type: 'ice', candidate: event.candidate
                 }
                 ws.send(JSON.stringify(message))
             }
@@ -60,6 +65,6 @@ async function createSession(data) {
     await pc.setRemoteDescription(new RTCSessionDescription(data))
 }
 
-async function addCandidate(data){
+async function addCandidate(data) {
     await pc.addIceCandidate(new RTCIceCandidate(data.candidate))
 }
