@@ -19,21 +19,21 @@ ws.onopen = async function () {
                 break
         }
 
-        pc.onicecandidate = event => {
-            if (event.candidate) {
-                message = {
-                    type: 'ice', candidate: event.candidate
-                }
-                ws.send(JSON.stringify(message))
-            }
-        }
-
-        pc.ontrack = event => {
-            const remoteVideo = document.getElementById('remoteVideo');
-            remoteVideo.srcObject = event.streams[0];
-        };
     }
 
+    pc.onicecandidate = event => {
+        if (event.candidate) {
+            message = {
+                type: 'ice', candidate: event.candidate
+            }
+            ws.send(JSON.stringify(message))
+        }
+    }
+
+    pc.ontrack = event => {
+        const remoteVideo = document.getElementById('remoteVideo');
+        remoteVideo.srcObject = event.streams[0];
+    };
 }
 
 async function init() {

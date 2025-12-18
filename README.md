@@ -1,1 +1,1 @@
-Sample peer to peer vioeo call service.
+Sample peer to peer video call service.
